@@ -2,8 +2,11 @@
 
 import Foundation
 
-// lets work with an actor
-// An actor is of reference type like a class, except only one task is allow to access its mutable type
+// an Actor is of reference type. Its purpose is to share a mutable state among several tasks.
+// An Actor allows access to access its state to only one task at a time.
+// So only one task can read or update the Actor's state.
+// The Coroutine counterpart is Mutex.
+// https://medium.com/@android-world/kotlin-mutex-a-comprehensive-guide-a79d0f4f2de7
 actor Logger {
     private(set) var log: String = ""
     
