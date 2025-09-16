@@ -124,6 +124,3 @@ let shape = makeShape()
 let shape2 = makeShape2()
 print(shape)
 print(shape.area())  // Output: 78.53981633974483
-
-
-

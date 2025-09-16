@@ -24,7 +24,7 @@ private class PrivateClass {
     }
 }
 
-let privateClass = PrivateClass(name: "Private")
+private let privateClass = PrivateClass(name: "Private")
 print(privateClass.name)
 
 

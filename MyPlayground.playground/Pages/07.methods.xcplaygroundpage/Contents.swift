@@ -21,3 +21,26 @@ class SomeSubclass: SomeClass {
 
 SomeSubclass.someTypeMethod()
 print(SomeClass.name)
+
+/**
+ What it is interesting about static func vs class func is the fact that a static method cannot be overriden, and can apply to struct, class, and enums.
+
+ */
+
+protocol IdentifiableType {
+    static func typeName() -> String
+}
+
+class Animal: IdentifiableType {
+    // if instead we use a static method, then Dog cannot override it.
+    class func typeName() -> String {
+        return "Animal"
+    }
+}
+
+class Dog: Animal {
+    override class func typeName() -> String {
+        return "Dog"
+    }
+}
+

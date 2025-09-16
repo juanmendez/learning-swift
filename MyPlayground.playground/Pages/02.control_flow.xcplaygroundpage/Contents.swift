@@ -28,33 +28,31 @@ for _ in 1..<5 {
     print("answer \(answer)")
 }
 
-
 var limit = 10
 var i = 0
 
 print("........ while loop")
 while i < limit {
     print("My limit is \(i)")
-    i+=1
+    i += 1
 }
 
 print("........ do-while loop")
 repeat {
     print("My limit is \(i)")
-    i+=1
+    i += 1
 } while i < limit
-
-
 
 var month = 7
 
-let season = switch month {
-case 1...3 : "Winter"
-case 4...6: "Spring"
-case 7...9: "Summer"
-case 10...12: "Fall"
-default: "None"
-}
+let season =
+    switch month {
+    case 1...3: "Winter"
+    case 4...6: "Spring"
+    case 7...9: "Summer"
+    case 10...12: "Fall"
+    default: "None"
+    }
 
 print("we are in \(season)")
 
@@ -62,15 +60,14 @@ print("we are in \(season)")
 let somePoint = ("key", "value")
 
 switch somePoint {
-    case ("key", "value"): print("\(somePoint) matched!")
-    default: print("\(somePoint) not available")
+case ("key", "value"): print("\(somePoint) matched!")
+default: print("\(somePoint) not available")
 }
 
-
 switch somePoint {
-    case (let key, let value) where key.starts(with: "k"): 
-        print("\(somePoint) matched! with \(somePoint.0)")
-    default: print("\(somePoint) not available")
+case (let key, let value) where key.starts(with: "k"):
+    print("\(somePoint) matched! with \(somePoint.0)")
+default: print("\(somePoint) not available")
 }
 
 let EMPTY = ""
@@ -83,10 +80,9 @@ for character in puzzleInput {
         // go as far as the next line and continue iteration
         continue
     }
-    
+
     puzzleOutput.append(character)
 }
-
 
 print(puzzleOutput)
 puzzleOutput = EMPTY
@@ -96,7 +92,7 @@ characterLabel: for character in puzzleInput {
         // go as far as the next line and continue iteration
         break characterLabel
     }
-    
+
     puzzleOutput.append(character)
 }
 
@@ -111,18 +107,16 @@ func b() {
     print("funky B")
 }
 
-
 func funkyLetters() {
     defer {
         print("printed funky letters! at the end of method execution")
     }
-    
+
     a()
     b()
 }
 
 funkyLetters()
-
 
 func multipleValuesReturned() -> (a: String, b: Int, c: Int) {
     return ("a", 1, 2)
@@ -134,19 +128,17 @@ print("values \(valuesReturned.a) \(valuesReturned.b) \(valuesReturned.c)")
 func someFunction(argumentLabel parameterName: Int) -> Int {
     // In the function body, parameterName refers to the argument value
     // for that parameter.
-    
+
     return parameterName * 2
 }
 
 someFunction(argumentLabel: 0)
-
 
 func funcAsParam(myParam: Int, myFunc: (Int) -> Int) -> Int {
     return myFunc(myParam)
 }
 
 print("returned function \(funcAsParam(myParam: 1, myFunc: someFunction))")
-
 
 func returnInteger() -> Int {
     return 1
@@ -157,6 +149,3 @@ func returnFunction() -> () -> Int {
 }
 
 print("return method \(returnFunction()())")
-
-
-
